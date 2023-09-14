@@ -1,0 +1,148 @@
+HTML - to build the web pages
+
+HTML boiler plate : basic skeleton of HTML
+-----------------
+
+<html>	--> opening tag
+
+	<head>		</head>
+	
+	<body>		</body>
+
+</html> --> closing tag
+
+NOTES:
+------
+1. paired tag and unpaired tag
+	eg: <div></div>, <a></a>, <ul></ul>  --> paired tags
+
+	eg: <img>, <link>, <input>, <br> --> unpaired
+
+2. each tag may or may not have child tags
+3. each tag may or may not have descendant tags
+4. not all tags will be having attributes or text.
+
+
+
+<a href="/register" class="ico-register"> Register  </a>
+
+<a> </a>	--> paired tag
+
+href, class	--> attributes
+
+Register --> content of the tag/ text 
+
+
+# element 2
+-----------
+<input type="submit" class="button-1 search-box-button" value="Search">
+
+<input> --> tagname(unpaired tag/void tag)
+
+type, class, value --> attributes
+
+text -> not present
+
+
+element 3
+----------
+
+<label for="pollanswers-1">	Excellent	</label>
+
+paired tag: <label> </label>
+
+attribute : for
+
+content/text: Excellent
+
+
+# text/content and link text
+------------------------------
+
+<label for="pollanswers-1">	Excellent	</label>
+
+tagname: label
+
+content/text: Excellent
+
+
+<a href="/register" class="ico-register">Register</a>
+
+tagname: a (anchor tag/ link tag)
+
+attributes: href, class
+
+content/text: Register --> link text
+
+
+https://demowebshop.tricentis.com/
+
+https://demowebshop.tricentis.com/register
+
+
+Locators
+--------
+
+1. id
+
+2. name
+
+3. class name
+
+4. link text
+
+5. partial link text
+
+6. tag name
+
+7. css selectors
+
+8. xpath
+
+
+########################################################################
+# type "mobiles" in the search bar
+
+<input type="text" 
+	class="search-box-text ui-autocomplete-input" 
+	id="small-searchterms" 
+	autocomplete="off" 
+	value="Search store" 
+	name="q">
+
+# id locator
+id="small-searchterms" 
+
+# name locator
+name="q"
+
+#class name locator
+class="search-box-text ui-autocomplete-input" 
+
+########################################################################
+driver.find_element(locator_name, locator_value) --> browser method
+
+- return the web element object	--> only one object
+
+
+element = driver.find_element("id", "small-searchterms")
+
+driver.find_element("class name", "search-box-text ui-autocomplete-input")
+
+driver.find_element("name", "q")
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
