@@ -34,6 +34,6 @@ print(driver.current_url)   # returns the url launched
 print(driver.title)         # returns the title of the webpage
 
 # close the session
-driver.close()          # currently active window
+driver.close()              # current active window
 
 # driver.quit()             # close the entire session
