@@ -1,5 +1,4 @@
 import time
-
 from selenium import webdriver
 
 opts = webdriver.ChromeOptions()
