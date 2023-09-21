@@ -1,0 +1,68 @@
+css selector:
+		
+		tagname[attr_name = attr_value]
+
+
+drawbacks:
+1. cannot locate element using its text
+2. cannot index multiple matches to get a single match
+3. cannot move in backward direction(child -> parent)
+
+
+xpath:
+
+types of xpath
+--------------
+1. absolute xpath(/): /html/body/table[1]/tbody/tr[2]/td/select
+
+2. relative xpath(//):(//select)[1]
+
+group indexing
+--------------
+	(xpath_expression)[index]
+
+
+using attributes:
+-----------------
+	//tagname[@attr_name = attr_value]
+
+using text():
+-------------
+	//tagname[text()=value]
+
+
+contains(source, value)
+-----------------------
+	//tagname[contains(@attr_name, attr_value)]
+	//input[contains(@name, "user")]
+
+	//tagname[contains(text(), value)]
+	(//div[contains(text(), "Login")])[1]
+
+
+parent-child xpaths
+-------------------
+1. immediate child(/)
+	
+	(//table[@class="textFieldsTable"])[1]/tbody/tr[1]/td/input
+
+	//div/ ul/ li/ a
+
+div
+	- ul
+		- li
+			-a
+		- li
+	
+	- input
+
+
+
+2. any child(//):  //div//a
+
+	(//table[@class="textFieldsTable"])[1]//input[@name="username"]
+
+
+
+
+

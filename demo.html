@@ -1,0 +1,347 @@
+<html>
+
+<head>
+  <title>Selenium Training</title>
+  <link rel="stylesheet" href="./style.css">
+</head>
+
+<body>
+  <table style="width:50%; height:150px; float: right;" border=solid name="release">
+    <tr>
+      <th>Standard Listbox</th>
+    </tr>
+    <tr>
+      <td>
+        <select id="standard_cars">
+          <option value="sel">Select car:</option>
+          <option value="aud">Audi</option>
+          <option value="bmw">BMW</option>
+          <option value="for">Ford</option>
+          <option value="hda">Honda</option>
+          <option value="jgr">Jaguar</option>
+          <option value="lr">Land Rover</option>
+          <option value="merc">Mercedes</option>
+          <option value="min">Mini</option>
+          <option value="nin">Nissan</option>
+          <option value="toy">Toyota</option>
+          <option value="vol">Volvo</option>
+        </select>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <select id="multiple_cars" multiple>
+          <option value="sel">Select car:</option>
+          <option value="aud">Audi</option>
+          <option value="bmw">BMW</option>
+          <option value="for">Ford</option>
+          <option value="hda">Honda</option>
+          <option value="jgr">Jaguar</option>
+          <option value="lr">Land Rover</option>
+          <option value="merc">Mercedes</option>
+          <option value="min">Mini</option>
+          <option value="nin">Nissan</option>
+          <option value="toy">Toyota</option>
+          <option value="vol">Volvo</option>
+        </select>
+      </td>
+    </tr>
+  </table>
+  <table style="width:50%" border=solid name="selenium">
+    <tr>
+      <th>Language</th>
+      <th>Select</th>
+    </tr>
+    <tr>
+      <td>Java</td>
+      <td><input type="checkbox" name="download"></td>
+    </tr>
+    <tr>
+      <td>Ruby</td>
+      <td><input type=checkbox name="download"></td>
+    </tr>
+    <tr>
+      <td>Perl</td>
+      <td><input type=checkbox name="download"></td>
+    </tr>
+    <tr>
+      <td>Python</td>
+      <td><input type=checkbox name="download"></td>
+    </tr>
+    <tr>
+      <td>C#</td>
+      <td><input type=checkbox name="download"></td>
+    </tr>
+    <tr>
+      <td>JavaScript</td>
+      <td><input type=checkbox name="download"></td>
+    </tr>
+  </table>
+  <br>
+  <table style="width:50%; height: 125px; float: right;" border=solid name="companies">
+    <tr>
+      <th>Multiple Elements with same "name" property</th>
+    </tr>
+    <tr>
+      <td>
+        <input style="width: 202px;" type="text" class="first_row" name="fname">
+        <input style="width: 202px;" type="text" class="first_row" name="fname">
+        <input style="width: 202px;" type="text" class="first_row" name="fname">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input style="width: 202px;" type="text" class="second_row" name="fname">
+        <input style="width: 202px;" type="text" class="second_row" name="fname">
+        <input style="width: 202px;" type="text" class="second_row" name="fname">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <input style="width: 202px;" type="text" class="third_row" name="fname">
+        <input style="width: 202px;" type="text" class="third_row" name="fname">
+        <input style="width: 202px;" type="text" class="third_row" name="fname">
+      </td>
+    </tr>
+  </table>
+  <table style="width:50%" border=solid name="os">
+    <tr>
+      <th>OS</th>
+      <th>Version</th>
+      <th>Link</th>
+    </tr>
+
+    <tr>
+      <td>Android</td>
+      <td>3.141</td>
+      <td><a href="https://www.android.com/intl/en_in/" target="_blank">Download</a></td>
+    </tr>
+    <tr>
+      <td>Linux</td>
+      <td>3.6.0</td>
+      <td><a href="https://www.linux.org" target="_blank">Download</a>
+      </td>
+    </tr>
+    <tr>
+      <td>Windows</td>
+      <td>3.140</td>
+      <td><a href="https://www.microsoft.com/en-in/windows" target="_blank">Download</a></td>
+    </tr>
+    <tr>
+      <td>iOS</td>
+      <td>3.141</td>
+      <td><a href="https://www.apple.com/in/" target="_blank">Download</a></td>
+    </tr>
+  </table>
+  <br>
+  <table style="width:50%; float:right" border=solid name="companies">
+    <tr>
+      <th>Dynamic Linktext</th>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://www.google.com" target="_blank" style="font-weight: bolder;">Inbox(2000)</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://www.google.com" target="_blank" style="font-weight: bolder;">Shopping</a>
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <a href="http://demowebshop.tricentis.com/" target="_blank" style="font-weight: bolder;">Continue Shopping</a>
+      </td>
+    </tr>
+  </table>
+
+  <table style="width:50%" border=solid name="companies">
+    <tr>
+      <th>Name</th>
+      <th>Website</th>
+    </tr>
+    <tr>
+      <td>Apple</td>
+      <td><a href="https://www.apple.com/in/" target="_blank">Apple</a></td>
+    </tr>
+    <tr>
+      <td>Google</td>
+      <td><a href="https://www.google.com/" target="_blank">Google</a></td>
+    </tr>
+    <tr>
+      <td>Yahoo</td>
+      <td><a href="https://www.apple.com/in/" target="_blank">Yahoo</a></td>
+    </tr>
+    <tr>
+      <td>Yelp</td>
+      <td><a href="https://www.google.com/" target="_blank">Yelp</a></td>
+    </tr>
+    </td>
+  </table>
+  <table style="width:50%; float: right;" ; border=solid name="companies">
+    <tr>
+      <th>JavaScript Alert</th>
+    </tr>
+    <tr>
+      <td>
+        <label style="font-weight: bolder;">Firstname</label>
+        <input type="text" id="firstname">
+        <label style="font-weight: bolder;">LastName</label>
+        <input type="text" id="lastname">
+        <button id="submit">Submit</button>
+      </td>
+    </tr>
+  </table>
+  <table style="width:50%; float: right;" ; border=solid name="companies">
+    <th>JavaScript Confirmation</th>
+    <tr>
+      <td>
+        <input type="checkbox" class="alert">
+        <label>Apple</label>
+        <input type="checkbox" class="alert">
+        <label>Google</label>
+        <input type="checkbox" class="alert">
+        <label>Yahoo</label>
+        <button id="delete">Delete</button>
+        <label class="label_alert"></label>
+      </td>
+    </tr>
+  </table>
+
+  <table style="width:50%; float: right;" ; border=solid name="companies">
+    <th>Model Window / Hidden Div Popup</th>
+    <tr>
+      <td>
+        <a href="#">Model Window</a>
+      </td>
+    </tr>
+  </table>
+  <table style="width:50%; float: right;" ; border=solid name="companies">
+    <th>Switching Windows</th>
+    <tr>
+      <td><a href="http://demowebshop.tricentis.com/" target="_blank">Webshop</a>
+    </tr>
+  </table>
+  <table style="width:50%; float: right;" ; border=solid name="companies">
+    <th>File Upload Popup</th>
+    <tr>
+      <td>
+        <input type="file" id="resume">
+      </td>
+    </tr>
+  </table>
+  <table style="width:50%; float: right;" ; border=solid name="companies">
+    <th>Authentication Popup</th>
+    <tr>
+      <td>
+        <a href="https://the-internet.herokuapp.com/basic_auth" target="_blank">LOGIN</a>
+      </td>
+    </tr>
+  </table>
+  <table style="width:50%; float: right;" ; border=solid name="companies">
+    <tr>
+      <th>Double Click</th>
+    </tr>
+    <tr>
+      <td>
+        <button id="double-click" ondblclick="dbl()">Double-click me</button>
+        <div id="double-click-message"></div>
+      </td>
+    </tr>
+  </table>
+  <table style="width:50%; float: right;" ; border=solid name="companies">
+    <tr>
+      <th>Contains</th>
+    </tr>
+    <tr>
+      <td>
+        <a href="https://www.facebook.com/" class="_facebook"> Facebook </a> <br><br>
+        FirstName <input name="  spam"></input>
+      </td>
+    </tr>
+  </table>
+  <table style="width:50%; float: right;" ; border=solid name="companies">
+    <tr>
+      <th>Wait</th>
+    </tr>
+    <tr>
+      <td>
+        FirstName_disabled <input id="first_name" disabled></input>
+      </td>
+    </tr>
+  </table>
+
+  <script src="./script.js"></script>
+</body>
+
+<table border="solid">
+  <th>Name</th>
+  <th>Volume</th>
+  <th>Price</th>
+  <tr>
+    <td>AAPL</td>
+    <td>50</td>
+    <td class="price" width=100px></td>
+  </tr>
+  <tr>
+    <td>MSFT</td>
+    <td>10</td>
+    <td class="price" width=100px></td>
+  </tr>
+  <tr>
+    <td>AA</td>
+    <td>20</td>
+    <td class="price" width=10px></td>
+  </tr>
+  <tr>
+    <td>FB</td>
+    <td>30</td>
+    <td class="price" width=100px></td>
+  </tr>
+</table>
+
+<table name="customers" border="solid">
+  <th>Sl.No</th>
+  <th>Firstname</th>
+  <th>Lastname</th>
+  <th>Percentage</th>
+  <tr>
+    <td>1</td>
+    <td>ALEX</td>
+    <td>MARTIN</td>
+    <td>63</td>
+  </tr>
+  <tr>
+    <td>2</td>
+    <td>AMY</td>
+    <td>BRAIN</td>
+    <td>65</td>
+  </tr>
+  <tr>
+    <td>3</td>
+    <td>BILL</td>
+    <td>GATES</td>
+    <td>70</td>
+  </tr>
+  <tr>
+    <td>4</td>
+    <td>STEVE</td>
+    <td>JOBS</td>
+    <td>75</td>
+  </tr>
+  <tr>
+    <td>5</td>
+    <td>JONATHAN</td>
+    <td>IVE</td>
+    <td>80</td>
+  </tr>
+  <tr>
+    <td>6</td>
+    <td>TIM</td>
+    <td>COOK</td>
+    <td>85</td>
+  </tr>
+</table>
+<table border="solid" name="links">
+
+</html>
