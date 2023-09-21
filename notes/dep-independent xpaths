@@ -1,0 +1,31 @@
+dependent-independent xpaths: to locate dynamically changing elements
+----------------------------
+
+steps
+-----
+1. identify independent and dependent elements
+
+2. locate/write xpath expression for independent element
+
+	//a[text()="Python 3.10.13"]
+
+3. traverse back till we get the common parent of both dep and indep 	elements (/..)
+
+	forward travesring: / or //
+
+	backward traversing: /..
+
+	//a[text()="Python 3.10.13"]/../..
+
+4. locate dependent element
+
+	//a[text()="Python 3.10.13"]/../..//a[text()=" Download"]
+
+usages:
+------
+1. handling web tables
+2. handling dynamically changing elements(shares)
+
+https://www.nseindia.com/market-data/pre-open-market-cm-and-emerge-market
+
+//a[text()="ADANIPORTS"]/../..//td[7]
