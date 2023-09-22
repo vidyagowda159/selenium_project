@@ -1,0 +1,13 @@
+th {
+    font: medium;
+    font-family: 'Courier New', Courier, monospace;
+    background-color: rgb(221, 220, 212);
+}
+
+#first_name{
+  border:solid red;
+}
+
+.price {
+  color: red;
+}

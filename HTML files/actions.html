@@ -1,0 +1,100 @@
+<?xml version="1.0"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.1//EN" "http://www.w3.org/TR/xhtml11/DTD/xhtml11.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+
+<head>
+  <title>Testing Javascript</title>
+  <script type="text/javascript">
+    var seen = {};
+
+    function updateContent(input) {
+      document.getElementById('resultParagraph').innerHTML = input.value;
+    }
+
+    function displayMessage(message) {
+      document.getElementById('resultParagraph').innerHTML = message;
+    }
+
+    function appendMessage(message) {
+      document.getElementById('resultParagraph').innerHTML += message + " ";
+    }
+
+    function register(message) {
+      if (!seen[message]) {
+        appendMessage(message);
+        seen[message] = true;
+      }
+    }
+
+    function delayedShowHide(delay, show) {
+      var blackBox = document.getElementById('clickToHide');
+      window.setTimeout(function () {
+        blackBox.style.display = show ? '' : 'none';
+      }, delay);
+    }
+  </script>
+  <script type="text/javascript">
+    var startList = function () {
+      // Ugh. Let's hope no-one is faking their user agent when running the tests
+      if (navigator.userAgent.indexOf("MSIE") != -1) {
+        var navRoot = document.getElementById("nav");
+        for (var i = 0; i < navRoot.childNodes.length; i++) {
+          var node = navRoot.childNodes[i];
+          if (node.nodeName == "LI") {
+            node.onmouseover = function () {
+              this.className += " over";
+            };
+            node.onmouseout = function () {
+              this.className = this.className.replace(" over", "");
+            };
+          }
+        }
+      }
+    };
+    window.onload = startList;
+  </script>
+  <style type="text/css">
+    #nav {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+    }
+
+    #nav li {
+      float: left;
+      position: relative;
+      width: 10em;
+    }
+
+    #nav li ul {
+      display: none;
+      position: absolute;
+      top: 1em;
+      left: 0;
+    }
+
+    #nav li>ul {
+      top: auto;
+      left: auto;
+    }
+
+    #nav li:hover ul,
+    #nav li.over ul {
+      display: block;
+      background: white;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="formageddon">
+    <input id="clickField" type="text" onclick="document.getElementById('clickField').value='Clicked';" value="Hello" />
+    <input id="doubleClickField" type="text" onclick="document.getElementById('doubleClickField').value='Clicked';"
+      ondblclick="document.getElementById('doubleClickField').value='DoubleClicked';"
+      oncontextmenu="document.getElementById('doubleClickField').value='ContextClicked'; return false;"
+      value="DoubleHello" />
+  </div>
+
+</body>
+
+</html>

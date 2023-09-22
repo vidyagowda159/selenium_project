@@ -1,0 +1,26 @@
+input[name="fname"] {
+    background-color: blueviolet;
+}
+
+input[class="second_row"] {
+    background-color: aqua;
+}
+
+/* .second_row {
+    background-color: cadetblue  
+} */
+
+input[name="lname"] {
+    background-color: brown;
+}
+
+p[class="first"] {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    font-weight: bolder;
+    background-color: blue;
+}
+
+p[class="second"] {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
