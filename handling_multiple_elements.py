@@ -11,7 +11,7 @@ path = r"C:\Users\Vidyashree M C\PycharmProjects\selenium_project\HTML files\dem
 
 # driver.get(path)
 # driver.maximize_window()
-
+#
 # element = driver.find_element("xpath", "//a")
 # print(element)
 # # find_element() returns only the first matching element in the webpage(returns a webelement)
@@ -53,22 +53,48 @@ path = r"C:\Users\Vidyashree M C\PycharmProjects\selenium_project\HTML files\dem
 ######################################################################################################
 # opening release notes of first 10 version from python.org
 
-driver.get("https://www.python.org/downloads/")
-driver.maximize_window()
+# driver.get("https://www.python.org/downloads/")
+# driver.maximize_window()
 
-links = driver.find_elements("xpath", '//a[text()="Release Notes"]')
+# links = driver.find_elements("xpath", '//a[text()="Release Notes"]')
+#
+# for link in links[:10]:
+# 	time.sleep(1)
+# 	link.click()
+# 	time.sleep(1)
+# 	driver.back()
 
-for link in links[:10]:
-	time.sleep(1)
-	link.click()
-	time.sleep(1)
-	driver.back()
-
+# -----------------------------------------------------------------------------------------------------
 # capture the link text and the href attribute of the links which have "python" word in their link text
 
+driver.get("https://www.python.org/")
+driver.maximize_window()
+
+# fetch the links
+# links = driver.find_elements("xpath", "//a")      # 230
+links = driver.find_elements("tag name", "a")       # 225
+print(len(links))
+
+for link in links:      # links --> list of 225 links
+	text_ = link.text
+	if "python" in text_:
+		print(text_)
+		print(link.get_attribute("href"))
+
+#  xpath contains()
+links = driver.find_elements("xpath", '//a[contains(text(), "python")]')        # 3 matches
+print(len(links))
+
+for link in links:
+	print(link.text)
+	print(link.get_attribute("href"))
+
+# partial link text
+links = driver.find_elements("partial link text", "python")         # 3 matches
+print(len(links))
+
+for link in links:
+	print(link.text)
+	print(link.get_attribute("href"))
 
 driver.close()
-
-
-
-
