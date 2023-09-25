@@ -1,0 +1,88 @@
+SYNCHRONIZATION
+---------------
+One of the main challenges for successful browser automation is to match the pace of your script execution with the pace of the application.
+In browser automation, before performing any operation on any web element, the script has to wait for the element to be visible (or/and enabled) on the webpage.
+Selenium provides two different ways to Achieve Synchronization. 1. Explicit Wait 2. Implicit Wait
+
+What is synchronization?
+------------------------
+•	Process of matching the application speed with that of selenium webdriver.
+•	Used to avoid the raise of exception while automating.
+
+Categories:
+-----------
+1. Unconditional Synchronization
+•	Here condition will not be specified, but time out value will be specified.
+•	It is executed using time module i.e., time.sleep(sec)
+
+Drawbacks:
+•	Time taken to complete execution will be more.
+•	It has to be specified for every instruction that needs to wait.
+•	The webdriver waits even though the element is found before the time specified.
+
+2. Conditional synchronization
+-------------------------------
+
+1.	Implicit wait:
+------------------
+•	Can be specified only once for entire instance of driver.
+•	In selenium we use, driver.implicitly_wait(sec)
+•	Polling frequency is 500ms (i.e., the webdriver will try to relocate for every 500 ms until it is found)
+•	If the element is not present, it raises NoSuchElementException.
+•	If the element is present, then it will execute the next instruction even though the time out specified is not complete.
+•	It provides waiting time between each and every instruction.
+
+Drawbacks:
+•	We cannot specify any conditions explicitly and it checks only if the element is present  or visible in the DOM or not
+
+
+2.	Explicit wait
+-----------------
+•	It is a code that can be defined to wait for a certain condition to occur before proceeding further.
+•	Extreme case is time.sleep(sec)
+•	Used to halt execution until a particular condition is met or the maximum time has elapsed.
+•	It searches for the element every 500ms
+•	WebDriver polls the DOM for a certain duration when trying to any element.
+
+Pre-requisites for explicit wait
+--------------------------------
+•	Import WebDriverWait.
+o	from Selenium.webdriver.support.ui import WebDriverWait
+•	Import Expected_Conditions.
+o	from selenium.Webdriver.support import expected_conditions
+
+Few Conditions in WebDriver Wait (Explicit wait)
+-------------------------------------------------
+1. visibility_of
+----------------
+•	visibility_of checks if the web element is visible on the webpage. If the element is not visible within timeout period, then "TimeoutException" is raised.
+•	If the element is not present on the DOM, then "NoSuchElementException" is raised.
+•	So to use the above condition, make sure that the element is present on the DOM.
+
+2. visibility_of_element_located
+--------------------------------
+•	visibility_of_element_located checks if the web element is present on the DOM and also visible on the webpage. (Both conditions will be checked)
+•	"TimeoutException" will be raised if either the element is not loaded onto the DOM or the element is not visible on the web page within timeout period.
+•	The above condition makes sure that the element is present on DOM and also visible on the web page.
+•	If the element is visible and is disabled due to some reasons, then "ElementNotInteractableException" is raised.
+
+3. invisibility_of_element
+--------------------------
+•	invisibility_of_element takes web element as an argument. It throws "TimeoutException" if the element is visible even after the timeout period.
+•	If the web element does not exist on the DOM, "NoSuchElementException" is raised.
+
+
+4. invisibility_of_element_located
+-----------------------------------
+•	invisibility_of_element_located takes by locator as an argument. It throws "TimeoutException" if the element is visible even after the timeout period that is specified.
+•	If the web element does not exist on the DOM, "NoSuchElementException" or "StaleElementReferenceException" is NOT RAISED.
+
+4. element_to_be_clickable
+--------------------------
+•	element_to_be_clickable takes by locator as an argument. It throws "ElementNotClickableException" if the element to be clicked is either not visible or not enabled or missing from the DOM.
+
+5. alert_is_present
+-------------------
+•	alert_is_present raises "TimeoutException" if the JavaScript Alert is not displayed with in the timeout period.
+
+
