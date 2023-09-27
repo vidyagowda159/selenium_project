@@ -6,7 +6,10 @@ options = webdriver.ChromeOptions()
 options.add_experimental_option("detach", True)
 driver = webdriver.Chrome(options=options)
 
-path = r"C:\Users\Vidyashree M C\PycharmProjects\selenium_project\HTML files\loading.html"
+# path = r"C:\Users\Vidyashree M C\PycharmProjects\selenium_project\HTML files\loading.html"
+
+path = r"C:\Users\Vidyashree M C\PycharmProjects\selenium_project\HTML files\progressbar.html"
+
 driver.get(path)
 driver.maximize_window()
 
@@ -34,32 +37,57 @@ driver.maximize_window()
 # --------------------------------------------------------------------------------------------
 # explicit wait/webdriver wait
 
-# import WebDriverWait class
-from selenium.webdriver.support.ui import WebDriverWait
-
-# import expected conditions
-from selenium.webdriver.support import expected_conditions as EC
-
-wait_ = WebDriverWait(driver, 60)
-locator = ("name", "fname")
-
-# true --> web element whose locator has been passed, false -> TimeOutException
-# first_name_element = wait_.until(EC.presence_of_element_located(locator))
-
-first_name_element = wait_.until(EC.visibility_of_element_located(locator))
-
-# web_element = driver.find_element("name", "fname")
-# first_name_element = wait_.until(EC.visibility_of(web_element))
-
-# driver.find_element("name", "fname").send_keys("Steve")
-first_name_element.send_keys("steve")
+# # import WebDriverWait class
+# from selenium.webdriver.support.ui import WebDriverWait
+#
+# # import expected conditions
+# from selenium.webdriver.support import expected_conditions as EC
+#
+# wait_ = WebDriverWait(driver, 60)
+# locator = ("name", "fname")
+#
+# # true --> web element whose locator has been passed, false -> TimeOutException
+# # first_name_element = wait_.until(EC.presence_of_element_located(locator))
+#
+# first_name_element = wait_.until(EC.visibility_of_element_located(locator))
+#
+# # web_element = driver.find_element("name", "fname")
+# # first_name_element = wait_.until(EC.visibility_of(web_element))
+#
+# # driver.find_element("name", "fname").send_keys("Steve")
+# first_name_element.send_keys("steve")
 
 # ----------------------------------------------------------------------------------------------------
-# waiting until the loading symbol becomes invisible
+# # waiting until the loading symbol becomes invisible
+# from selenium.webdriver.support.ui import WebDriverWait
+# from selenium.webdriver.support import expected_conditions as EC
+#
+# # locate loading symbol element
+# locator = ("id", "loader")
+#
+# # waiting until the loading symbol becomes invisible
+# wait_ = WebDriverWait(driver, 10)
+# loading_element = wait_.until(EC.invisibility_of_element_located(locator))
+#
+# # interact with firstname and lastname textfields
+# driver.find_element("name", "fname").send_keys("Steve")
+# driver.find_element("name", "lname").send_keys("Jobs")
 
-# wait until the progress bar reaches 100%, once it reaches click on the button to restart the progress
+# -------------------------------------------------------------------------------------
+# wait until the progress bar reaches 100%, once it reaches click on the button to
+# restart the progress
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions as EC
 
+button = driver.find_element("xpath", '//button[text()="Click Me"]')
+button.click()
 
+locator = ("xpath", '//div[text()="100%"]')
+
+wait_ = WebDriverWait(driver, 10)
+wait_.until(EC.presence_of_element_located(locator), message="Element is not present")
+
+button.click()
 
 
 

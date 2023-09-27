@@ -1,0 +1,32 @@
+select
+•	All list box related methods are implemented inside the class “Select”.
+•	In order to access methods of ”Select” class, we need to create an object instance to the ”Select” class and pass a “WebElement” (list box) as constructor argument.
+•	There are 3 different methods available in “Select” class to select an item from the list box.
+        1. select_item_by_visible_text : Selects an option based upon its text
+        2. select_by_value : selects an option based upon its value attribute
+        3. select_item_by_index :
+            •	Selects an option based upon the <select> element’s internal index
+            •	index starts from 0
+
+Options
+•	Returns the list of all the options (each option is a WebElement) present in the list box.
+•	Each item of the list is an option element (WebElement).
+•	To get the text of all the options, we need to iterate over the list that is returned by options property and call the attribute “text” on each item of the list.
+
+first_selected_option
+•	Returns the option (WebElement) which is present at the top of all the selected options in the list box.
+•	Since, first_selected_option returns a WebElement, we need to call the text attribute, to get the text of the option.
+
+Deselect
+1.	deselect_by_visible_text
+2.	deselect_by_value
+3.	deselect_by_index
+4.	deselect_all
+
+all_selected_options
+•	Returns the options (WebElement) which are currently selected in the list box.
+•	Since, all_selected_options returns a list of Web Elements, we need to call the method text, to get the text of the option.
+
+is_multiple
+•	Returns “True” if the select element is multiple select.
+•	Returns “False” or “None” if the select element is single select.

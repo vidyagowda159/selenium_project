@@ -1,6 +1,6 @@
 SYNCHRONIZATION
 ---------------
-One of the main challenges for successful browser automation is to match the pace of your script execution with the pace of the application.
+One of the main challenges for successful browser in automation is to match the pace of your script execution with the pace of the application.
 In browser automation, before performing any operation on any web element, the script has to wait for the element to be visible (or/and enabled) on the webpage.
 Selenium provides two different ways to Achieve Synchronization. 1. Explicit Wait 2. Implicit Wait
 
