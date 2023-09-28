@@ -37,20 +37,39 @@ select_obj = Select(listbox_element)
 # # 3. select_by_index()
 # select_obj.select_by_index(5)
 
-# returns list of all the options webelements
-all_options = select_obj.options
+# # returns list of all the options webelements
+# all_options = select_obj.options
+#
+# # selecting all the options one by one
+# for option in all_options:
+# 	text = option.text
+# 	select_obj.select_by_visible_text(text)
+# 	time.sleep(1)
+#
+# print(select_obj.is_multiple)      # None
+#
+# print(select_obj.first_selected_option.text)        # return the current selected option
 
-# selecting all the options one by one
-for option in all_options:
-	text = option.text
-	select_obj.select_by_visible_text(text)
-	time.sleep(1)
 
 # selecting all the options using select_by_index and select_by_value
 
-print(select_obj.is_multiple)      # None
+# get all the options
+all_options = select_obj.options
 
-print(select_obj.first_selected_option.text)        # return the current selected option
+# # select_by_value()
+# for option in all_options:
+# 	result = option.get_attribute("value")
+# 	select_obj.select_by_value(result)
+# 	time.sleep(1)
+
+# select_by_index()
+# for index, option in enumerate(all_options):
+# 	select_obj.select_by_index(index)
+# 	time.sleep(1)
+
+for index in range(len(all_options)):
+	select_obj.select_by_index(index)
+	time.sleep(1)
 
 driver.close()
 
