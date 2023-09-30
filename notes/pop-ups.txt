@@ -1,0 +1,18 @@
+						POP UPS
+
+Alert/Confirmation/Java Script pop up
+Alert is a small message box which displays on-screen notification to give the user some kind of information or ask for permission to perform certain kind of operation. It may be also used for warning purpose.
+Characteristics of alert pop up:
+•	We cannot inspect the pop-up
+•	We can move the pop-up
+•	It contains minimise, maximise and close buttons.
+•	It contains only one button (‘YES’ or ‘NO’) or two buttons (‘Cancel’ and ‘OK’).
+•	This kind of pop-up is also called as web based pop-up and javascript pop-up.
+•	In order to perform operation on the alert pop-up, we first transfer the control from webpage to the pop-up.
+•	Selenium provides us with a class called Alert.
+
+File upload pop up
+•	Hidden division pop is a dialog or overlay which is initially hidden, but will be popped up only the user performs some actions like click or on- page load etc.
+•	This is not JavaScript popup.
+•	We can inspect the overlay When hidden division pop is opened, pop takes the focus from the application.
+•	When pop up is closed, focus automatically goes to the application.

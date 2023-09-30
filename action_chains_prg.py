@@ -63,7 +63,6 @@ time.sleep(2)
 action = ActionChains(driver)
 action.drag_and_drop(source_element, target_element).perform()
 
-# monster india --> skill tests --> click python
 # flipkart.com --> Electronics --> Gaming --> click accessory kits
 
 
