@@ -1,6 +1,7 @@
 						POP UPS
 
 Alert/Confirmation/Java Script pop up
+--------------------------------------
 Alert is a small message box which displays on-screen notification to give the user some kind of information or ask for permission to perform certain kind of operation. It may be also used for warning purpose.
 Characteristics of alert pop up:
 •	We cannot inspect the pop-up
@@ -12,7 +13,33 @@ Characteristics of alert pop up:
 •	Selenium provides us with a class called Alert.
 
 File upload pop up
+--------------------
 •	Hidden division pop is a dialog or overlay which is initially hidden, but will be popped up only the user performs some actions like click or on- page load etc.
 •	This is not JavaScript popup.
 •	We can inspect the overlay When hidden division pop is opened, pop takes the focus from the application.
 •	When pop up is closed, focus automatically goes to the application.
+
+Handling Iframes
+-----------------
+•	An iFrame (Inline Frame) is an HTML document embedded inside the current HTML document on a website.
+•	Frame or iFrame HTML tag will be used to insert one html page in another html page.
+•	iFrame HTML element is used to insert content from another source, such as an advertisement, into a Web page.
+•	iFrame is defined by an <iFrame></iFrame> tag in HTML. With this tag you can identify an iFrame while inspecting the HTML tree.
+•	In order to embed (include) a web page inside another web page developer uses ‘iFrame’ or ‘Frame’ html tag.
+•	But, if an element is inside the frame then web driver cannot find the element.
+•	Webdriver can’t perform an action on web element automatically when object or web element are inside the frame.
+•	In order to work with frame web elements we should pass driver control to the frame before performing an action.
+
+There are three ways we can pass driver control to frame.
+1.	Int (0, 1, 2)
+2.	String (ID/Name)
+3.	Web Element (Address)
+
+Switching back to Main page from Frame
+--------------------------------------
+Once you are done with all the task in a particular iFrame you can switch back to the main page using the below statement.
+driver.switch_to.default_content()
+
+NOTE:
+•	Whenever switchTo ().Frame () method fails to locate the frame in a HTML page. We get a NoSuchFrameException.
+•	Whenever the frame page get refresh, control will automatically go back to the main page.
